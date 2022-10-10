@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlgorytmWegierski.View"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800" Activated="Window_Activated">
+        Title="Window1" Height="450" Width="800" Activated="Window_Activated"
+        Background="DarkMagenta">
 
 </Window>  

@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Windows.Controls;
 using System.Windows;
 using AlgorytmWegierski.View;
+using System.Diagnostics;
 
 namespace AlgorytmWegierski.ViewModel
 {
@@ -21,9 +22,9 @@ namespace AlgorytmWegierski.ViewModel
         {
             _MatrixContent = new List<Matrix>
             {
-                new Matrix{NrId = 1, RowId=0,ColumnId=0, Number=10 },
-                new Matrix{NrId = 2, RowId=0,ColumnId=1, Number=1 },
-                new Matrix{NrId =3 , RowId=1, ColumnId=1, Number=9 }
+                new Matrix{NrId = 1, RowId=0,ColumnId=0, Number=1 },
+                new Matrix{NrId = 2, RowId=0,ColumnId=1, Number=2 },
+                new Matrix{NrId = 3 , RowId=1, ColumnId=1, Number=3 },
             };
         }
 
@@ -57,35 +58,63 @@ namespace AlgorytmWegierski.ViewModel
         {
             return myMatrix.FirstOrDefault(x => x.NrId == id);
         }
+
+        protected Matrix getNumberOfElements(IList<Matrix> myMatrix)
+        {
+            return myMatrix.OrderByDescending(x => x.NrId).FirstOrDefault();
+        }
+
+        protected void addNumberToMatrix(Matrix myCurrentElement, Grid myGrid)
+        {
+            Trace.WriteLine(myGrid.ColumnDefinitions.Count);
+            if (myCurrentElement != null)
+            {
+                TextBlock txt = new TextBlock();
+                txt.Text = myCurrentElement.Number.ToString();
+                txt.FontSize = 20;
+                txt.FontWeight = FontWeights.Bold;
+                txt.TextAlignment = TextAlignment.Right;
+                Grid.SetColumn(txt, myCurrentElement.ColumnId);
+                Grid.SetRow(txt, myCurrentElement.RowId);
+                myGrid.Children.Add(txt);
+            }
+        }
+
         #endregion
 
         public void GetMatrixToGrid(Window myWindow )
         {
             Matrix? columns, rows;
+            Matrix currentMatrixContent;
             getColumsAndRows(_MatrixContent, out columns, out rows);
+            int? elements = getNumberOfElements(_MatrixContent).NrId;
+
 
             if (columns != null || rows != null)
             {
+
+                
                 Grid myGrid = new Grid();
                 myGrid.ShowGridLines = true;
+               
 
-                for (int i = 0; i < columns.ColumnId; i++)
+                for (int i = 0; i <= columns.ColumnId; i++)
                 {
                     resizeColumn(myGrid);
                 }
 
-                for (int i = 0; i < rows.RowId; i++)
+                for (int i = 0; i <= rows.RowId; i++)
                 {
                     resizeRow(myGrid);
                 }
-                var asd = getNumberToMatrix(_MatrixContent, 1);
-                TextBlock txt1 = new TextBlock();
-                txt1.Text =  asd.Number.ToString();
-                txt1.FontSize = 20;
-                txt1.FontWeight = FontWeights.Bold;
-                Grid.SetColumnSpan(txt1, 3);
-                Grid.SetRow(txt1, 0);
-                myGrid.Children.Add(txt1);
+
+                for (int i = 0; i <= elements; i++)
+                {
+                    
+                    currentMatrixContent = getNumberToMatrix(_MatrixContent, i);
+                    addNumberToMatrix(currentMatrixContent, myGrid);
+                }
+               
                 myWindow.Content = myGrid;
                 myWindow.Show();
             }
