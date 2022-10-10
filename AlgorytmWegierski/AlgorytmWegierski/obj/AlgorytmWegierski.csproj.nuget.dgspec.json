@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\optymalizacja\\algorytm hungary\\AlgorytmWegierski\\AlgorytmWegierski.csproj": {}
+    "D:\\optymalizacja\\AlgorytmWegierski\\AlgorytmWegierski\\AlgorytmWegierski.csproj": {}
   },
   "projects": {
-    "D:\\optymalizacja\\algorytm hungary\\AlgorytmWegierski\\AlgorytmWegierski.csproj": {
+    "D:\\optymalizacja\\AlgorytmWegierski\\AlgorytmWegierski\\AlgorytmWegierski.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\optymalizacja\\algorytm hungary\\AlgorytmWegierski\\AlgorytmWegierski.csproj",
+        "projectUniqueName": "D:\\optymalizacja\\AlgorytmWegierski\\AlgorytmWegierski\\AlgorytmWegierski.csproj",
         "projectName": "AlgorytmWegierski",
-        "projectPath": "D:\\optymalizacja\\algorytm hungary\\AlgorytmWegierski\\AlgorytmWegierski.csproj",
+        "projectPath": "D:\\optymalizacja\\AlgorytmWegierski\\AlgorytmWegierski\\AlgorytmWegierski.csproj",
         "packagesPath": "C:\\Users\\szymz\\.nuget\\packages\\",
-        "outputPath": "D:\\optymalizacja\\algorytm hungary\\AlgorytmWegierski\\obj\\",
+        "outputPath": "D:\\optymalizacja\\AlgorytmWegierski\\AlgorytmWegierski\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\szymz\\AppData\\Roaming\\NuGet\\NuGet.Config",

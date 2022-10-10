@@ -21,13 +21,21 @@ namespace AlgorytmWegierski.View
     public partial class MatrixMainView : Window
     {
         public MatrixMainView()
-        {
-            MatrixVM matrixVM = new MatrixVM();
-            this.DataContext = matrixVM;
+        { 
             InitializeComponent();
-            
+
         }
 
-        
+        private void Window_Activated(object sender, EventArgs e)
+        {
+
+            MatrixVM matrixVM = new MatrixVM();
+
+            this.DataContext = matrixVM;
+
+            var okniarz = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+            matrixVM.GetMatrixToGrid(okniarz);
+
+        }
     }
 }
