@@ -13,11 +13,13 @@ namespace AlgorytmWegierski.Model
         private int rowId;
         private int columnId;
         private int number;
+        private int zamalowany;
 
         public int NrId { get { return nrId; } set { nrId = value; OnPropertyChanged("NrId"); } }
         public int RowId { get { return rowId; } set { rowId = value; OnPropertyChanged("RowId"); } }
         public int ColumnId { get { return columnId; } set { columnId = value; OnPropertyChanged("ColumnId"); } }
         public int Number { get { return number; } set { number = value; OnPropertyChanged("Number"); } }
+        public int Zamalowany { get { return zamalowany; } set { zamalowany = value; OnPropertyChanged("Zamalowany"); } }
 
         #region INotifyPropertyChanged Members  
 

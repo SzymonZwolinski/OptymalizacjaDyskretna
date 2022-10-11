@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgorytmWegierski.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,15 @@ namespace AlgorytmWegierski
         {
             InitializeComponent();
         }
-       
+
+        private void BtnLos_Click(object sender, RoutedEventArgs e)
+        {
+            AlgorytmWegierski.View.MatrixMainView window = new AlgorytmWegierski.View.MatrixMainView();
+            MatrixVM matrixvm = new MatrixVM();
+            window.Show();
+            matrixvm.losowo(4,4);
+            window.DataContext = matrixvm;
+            
+        }
     }
 }

@@ -6,5 +6,15 @@
         xmlns:local="clr-namespace:AlgorytmWegierski"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+    <Grid>
+        <Button x:Name="BtnLos" Content="Losowane" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="BtnLos_Click"/>
+        <Button x:Name="btnPlik" Content="Z pliku" HorizontalAlignment="Left" Margin="18,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-1.251"/>
+        <Button x:Name="btnReczny" Content="Recznie" HorizontalAlignment="Left" Margin="19,104,0,0" VerticalAlignment="Top"/>
+        
+        <TextBox x:Name="txtBoxPlik" HorizontalAlignment="Left" Margin="80,58,0,0" TextWrapping="Wrap" Text="Wprowadz plik" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Button x:Name="BtnPlikZatwierdz" Content="Zatwierdz" HorizontalAlignment="Left" Margin="214,56,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        
+        <TextBox HorizontalAlignment="Left" Margin="80,97,0,0" TextWrapping="Wrap" Text="Wprowadz liczby w postaci ciagu oddzielone spacjami" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Button x:Name="BtnZatwierdzRecznie" Content="Zatwierdz" HorizontalAlignment="Left" Margin="214,105,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+    </Grid>
 </Window>

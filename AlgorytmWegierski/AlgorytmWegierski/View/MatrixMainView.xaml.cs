@@ -1,6 +1,7 @@
 ﻿using AlgorytmWegierski.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,11 @@ namespace AlgorytmWegierski.View
     /// </summary>
     public partial class MatrixMainView : Window
     {
+        private MatrixVM matrixVM = new MatrixVM();
         public MatrixMainView()
-        { 
+        {
             InitializeComponent();
+
 
         }
 
@@ -35,7 +38,15 @@ namespace AlgorytmWegierski.View
 
             var okniarz = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
             matrixVM.GetMatrixToGrid(okniarz);
+            matrixVM.AlgorytmoHungaro();
 
+
+
+        }
+
+        private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            matrixVM.AlgorytmoHungaro();
         }
     }
 }

@@ -16,9 +16,9 @@ namespace AlgorytmWegierski
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-            AlgorytmWegierski.View.MatrixMainView window = new AlgorytmWegierski.View.MatrixMainView();
-            window.Show();
+            //base.OnStartup(e);
+            //AlgorytmWegierski.View.MatrixMainView window = new AlgorytmWegierski.View.MatrixMainView();
+           // window.Show();
         }
     }
 }
